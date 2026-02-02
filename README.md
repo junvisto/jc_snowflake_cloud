@@ -1,1 +1,1 @@
-# jc_snowflake_cloud
+- I’d like to walk through a simple ETL project I built in Snowflake. I’m using a made up car dataset, and everything from ingestion to transformation is handled directly in Snowflake.
