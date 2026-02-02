@@ -1,0 +1,49 @@
+"""
+Snowflake Medallion Architecture 
+
+        ┌──────────────┐
+        │      S3      │
+        │  CSV Files   │
+        └──────┬───────┘
+               │
+               │  COPY INTO
+               ▼
+        ┌──────────────┐
+        │    BRONZE    │
+        │  raw tables  │
+        │              │
+        │ car_listings │
+        │ dealers      │
+        │ sales        │
+        └──────┬───────┘
+               │
+               │ Streams (CDC)
+               ▼
+        ┌──────────────┐
+        │   STREAMS    │
+        │              │
+        │              │
+        └──────┬───────┘
+               │
+               │ Tasks + MERGE SPs
+               ▼
+        ┌──────────────┐
+        │    SILVER    │
+        │ clean tables │
+        │              │
+        │ car_listings │
+        │ dealers      │
+        │ sales        │
+        └──────┬───────┘
+               │
+               │ Views
+               ▼
+        ┌──────────────┐
+        │     GOLD     │
+        │ BI Views     │
+        │              │
+        │ inventory &  │
+        │ sales funnel │
+        │ dealer stats │
+        └──────────────┘
+"""
