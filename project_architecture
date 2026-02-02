@@ -9,7 +9,7 @@ Snowflake Medallion Architecture
                │  COPY INTO
                ▼
         ┌──────────────┐
-        │    BRONZE    │
+        │   BRONZE     │
         │  raw tables  │
         │              │
         │ car_listings │
